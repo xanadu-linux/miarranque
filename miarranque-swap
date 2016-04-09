@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+LC_ALL=C
+contar=0
+modprobe zram
+echo "104857600" > /sys/block/zram0/disksize
+mkswap /dev/zram0
+swapon -p 50 /dev/zram0
+for j in $(fdisk -l | grep "swap" | awk '{print $1}'); do
+	swapon -p 25 -f $j
+done
+for i in $(find /media/user/ -type f -name "swapfile.swp"); do
+	let contar=$(($contar+1))
+	losetup /dev/loop$contar $i
+	mkswap /dev/loop$contar
+	swapon -p 30 -f /dev/loop$contar
+done

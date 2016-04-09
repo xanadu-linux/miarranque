@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+LC_ALL=C
+name="/etc/sysctl.d/11-optimizaciones.conf"
+memor=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+mb=$(( $memor * 1024 ))
+mf=$(( $mb / 1024 * 0,01 ))
+fm=$(( $mb / 4194304 * 256 ))
+mo=$(( $mb * 0,10 / 65536 ))
+mt=$(( $fm * 2 ))
+ps=$(getconf PAGE_SIZE)
+pp=$(getconf _PHYS_PAGES)
+shmall=$(( $pp / 2 ))
+shmmax=$(( $shmall * $ps ))
+echo "kernel.shmmax = $shmmax" > $name
+echo "kernel.shmall = $shmall" >> $name
+echo "vm.min_free_kbytes = $mf" >> $name
+echo "fs.file-max = $fm" >> $name
+echo "net.ipv4.tcp_max_orphans = $mo" >> $name
+echo "net.ipv4.tcp_max_tw_buckets = $mt" >> $name
+if (( $memor < 1024000 )); then
+	echo "vm.dirty_ratio = 25" >> $name
+	echo "vm.dirty_background_ratio = 15" >> $name
+	echo "vm.dirty_expire_centisecs = 750" >> $name
+	echo "vm.dirty_writeback_centisecs = 125" >> $name
+else
+	if (( $memor > 4096000 )); then
+		echo "vm.swappiness = 10" >> $name
+		echo "vm.vfs_cache_pressure = 50" >> $name
+	fi
+	if (( $memor < 8192000 )); then
+		echo "vm.dirty_ratio = 12" >> $name
+		echo "vm.dirty_background_ratio = 10" >> $name
+		echo "vm.dirty_expire_centisecs = 1500" >> $name
+		echo "vm.dirty_writeback_centisecs = 250" >> $name
+	else
+		echo "vm.dirty_ratio = 3" >> $name
+		echo "vm.dirty_background_ratio = 5" >> $name
+		echo "vm.dirty_expire_centisecs = 3000" >> $name
+		echo "vm.dirty_writeback_centisecs = 500" >> $name
+	fi
+fi
+sysctl -p
+
+if (( $memor < 768000 )); then
+	if (( $memor < 512000 )); then
+		sed -i 's_Exec=default_Exec=/usr/bin/lxlauncher_g' /usr/share/xsessions/lightdm-xsession.desktop
+	else
+		sed -i 's_Exec=default_Exec=/usr/bin/openbox-session_g' /usr/share/xsessions/lightdm-xsession.desktop
+	fi
+fi
+if ! [[ -z $(lscpu | grep GenuineIntel) ]]; then
+	echo "INTEL_BATCH=1" > /etc/environment
+fi
