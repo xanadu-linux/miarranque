@@ -1,10 +1,22 @@
-commit 0455555a48a9781141040799775818c7fd08aff7 (HEAD, origin/master, origin/HEAD, master)
+commit e41f135c342a4550cf59accbe8184ebde63a8064 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Mon Apr 25 16:55:32 2016 -0430
+
+    * se cambia la prioridad del archivo creado por miarranque-mem de 11 a 60
+
+commit e439de37e8d9dda79e0f0d72f5fe345da4b67683
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sun Apr 17 20:50:39 2016 -0430
+
+    * changelog
+
+commit 0455555a48a9781141040799775818c7fd08aff7
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sun Apr 17 20:50:30 2016 -0430
 
     * zenodo
 
-commit ab173161555df6454c3c659ade4fec6942a299fd
+commit ab173161555df6454c3c659ade4fec6942a299fd (tag: v0.1)
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Apr 9 11:35:38 2016 -0430
 
