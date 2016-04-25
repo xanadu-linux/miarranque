@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 LC_ALL=C
-name="/etc/sysctl.d/11-optimizaciones.conf"
+name="/etc/sysctl.d/60-optimizaciones.conf"
 memor=$(grep MemTotal /proc/meminfo | awk '{print $2}')
 mb=$(( $memor * 1024 ))
 mf=$(( $mb / 1024 * 0,01 ))
