@@ -1,4 +1,16 @@
-commit e41f135c342a4550cf59accbe8184ebde63a8064 (HEAD, origin/master, origin/HEAD, master)
+commit c88a56a512108f3265f4efa38ba5cdb4f9bf51c1 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jul 2 21:27:00 2016 -0400
+
+    * se coloca un for para leer todos los archivos en /etc/fstab.d
+
+commit 2f3ff33b2ced4fbe2790a74aaf03a2e74aaef7b8
+Author: jose perez <sinfallas@gmail.com>
+Date:   Mon Apr 25 16:56:19 2016 -0430
+
+    * changelog
+
+commit e41f135c342a4550cf59accbe8184ebde63a8064
 Author: jose perez <sinfallas@gmail.com>
 Date:   Mon Apr 25 16:55:32 2016 -0430
 
