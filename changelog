@@ -1,4 +1,10 @@
-commit c93b19d89b0434e3ddb454c4941ca60de9d61f56 (HEAD, origin/master, origin/HEAD, master)
+commit b000f7833aad6022ae8673ee1b162915ae27d2ca (HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Wed Mar 29 16:13:46 2017 -0400
+
+    * changelog
+
+commit c93b19d89b0434e3ddb454c4941ca60de9d61f56 (origin/master, origin/HEAD)
 Author: jose perez <sinfallas@gmail.com>
 Date:   Wed Mar 29 16:13:15 2017 -0400
 
