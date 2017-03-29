@@ -39,7 +39,7 @@ else
 		echo "vm.dirty_writeback_centisecs = 500" >> $name
 	fi
 fi
-sysctl -p
+sysctl -p > /dev/null
 
 if (( $memor < 768000 )); then
 	if (( $memor < 512000 )); then
