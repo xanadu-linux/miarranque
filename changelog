@@ -1,4 +1,16 @@
-commit c88a56a512108f3265f4efa38ba5cdb4f9bf51c1 (HEAD, origin/master, origin/HEAD, master)
+commit c93b19d89b0434e3ddb454c4941ca60de9d61f56 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Wed Mar 29 16:13:15 2017 -0400
+
+    * se agrega /dev/null para que no muestre la salida en pantalla
+
+commit 010c94151a7284a1cb9d7f8f96be2ac1f22b185d
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jul 2 21:27:31 2016 -0400
+
+    * changelog
+
+commit c88a56a512108f3265f4efa38ba5cdb4f9bf51c1
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jul 2 21:27:00 2016 -0400
 
