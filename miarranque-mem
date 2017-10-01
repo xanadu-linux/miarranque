@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# Made by Sinfallas <sinfallas@yahoo.com>
+# Licence: GPL-2
 LC_ALL=C
+IFS=" "
 name="/etc/sysctl.d/60-optimizaciones.conf"
 memor=$(grep MemTotal /proc/meminfo | awk '{print $2}')
 mb=$(( $memor * 1024 ))
